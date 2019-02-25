@@ -32,6 +32,7 @@ echo "Adding nagios to group" >> $LOGFILE
 usermod -a -G nagcmd nagios
 
 echo "Nagios package compeling" >> $LOGFILE
+tar -xvf nagios-4.4.3.tar.gz
 cd nagios-4.4.3 >> $LOGFILE
 ./configure --with-command-group=nagcmd >> $LOGFILE
 sleep 30
