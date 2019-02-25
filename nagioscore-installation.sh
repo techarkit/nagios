@@ -22,6 +22,7 @@ echo "Installing prerequisites" >> $LOGFILE
 yum install -y wget httpd php gcc glibc glibc-common gd gd-devel make net-snmp perl perl-devel openssl >> $LOGFILE
 
 echo "Downloading Nagios Core Package..." >> $LOGFILE
+cd
 wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.3.tar.gz
 
 echo "Creating Nagios User" >> $LOGFILE
@@ -53,12 +54,15 @@ htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 
 echo "Starting Web Service" >> $LOGFILE
 systemctl start httpd.service  >> $LOGFILE
+systemctl enable httpd.service  >> $LOGFILE
 systemctl status httpd.service >> $LOGFILE
 echo "Starting Nagios Service" >> $LOGFILE
 systemctl start nagios.service >> $LOGFILE
+systemctl enable nagios.service >> $LOGFILE
 systemctl status nagios.service >> $LOGFILE
 
 echo "Downloading Nagios Plugins" >> $LOGFILE
+cd
 wget https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz >> $LOGFILE
 
 echo "Extracting Nagios Plugins" >> $LOGFILE
