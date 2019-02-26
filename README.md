@@ -21,3 +21,9 @@ For More Details Refer below URL
 - [Generate Nagios configuration](https://arkit.co.in/generate-nagios-configuration-using-shell-script/)
 
 - [Nagios Core Installation Step by Step Guide Video](https://youtu.be/ZMCfgJkIz3I)
+
+## Adding Command for check_nt
+define command {
+    command_name    check_nt
+    command_line    $USER1$/check_nt -H $HOSTADDRESS$ -p 12489 -s $ARG1$ -v $ARG2$ $ARG3$ $ARG4$
+}
