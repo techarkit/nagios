@@ -21,3 +21,4 @@ For More Details Refer below URL
 - [Generate Nagios configuration](https://arkit.co.in/generate-nagios-configuration-using-shell-script/)
 
 - [Nagios Core Installation Step by Step Guide Video](https://youtu.be/ZMCfgJkIz3I)
+- [How to Add Windows Host to Nagios Monitoring Video](https://youtu.be/0UQxihYWK3w)
