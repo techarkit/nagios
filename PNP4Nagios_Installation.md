@@ -76,10 +76,10 @@ define command{
 
 
 ## ERROR 2
-**[CRIT]  service_perfdata_command is defined (service_perfdata_command=process-service-perfdata)
-[CRIT]  service_perfdata_command is not allowed in mode 'bulk'
-[CRIT]  host_perfdata_command is defined (host_perfdata_command=process-host-perfdata)
-[CRIT]  host_perfdata_command is not allowed in mode 'bulk'**
+- **[CRIT]  service_perfdata_command is defined (service_perfdata_command=process-service-perfdata)**
+- **[CRIT]  service_perfdata_command is not allowed in mode 'bulk'**
+- **[CRIT]  host_perfdata_command is defined (host_perfdata_command=process-host-perfdata)**
+- **[CRIT]  host_perfdata_command is not allowed in mode 'bulk'**
 
 ### Solution
 ```
