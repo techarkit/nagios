@@ -1,7 +1,8 @@
-`yum install rrdtool`
-`yum install ruby xorg-x11-fonts-Type1 php-xml`
-
-# CHANGE PATH to temp folder for downloading pnp4nagios
+```
+yum install rrdtool
+yum install ruby xorg-x11-fonts-Type1 php-xml
+```
+## CHANGE PATH to temp folder for downloading pnp4nagios
 
 ```
 cd /tmp/
@@ -16,21 +17,24 @@ make install-init
 make fullinstall
 ```
 
-# Start and Enable Web & Nagios services
-`systemctl enable npcd
+## Start and Enable Web & Nagios services
+```
+systemctl enable npcd
 systemctl start npcd
 systemctl restart nagios
 systemctl restart httpd`
+```
 
-# DELETE DEFAULT PHP PAGE
-`rm -rf /usr/local/pnp4nagios/share/install.php`
-
-# VERIFY PNP4NAGIOS CONFIGURATION
+## DELETE DEFAULT PHP PAGE
+```
+rm -rf /usr/local/pnp4nagios/share/install.php`
+```
+## VERIFY PNP4NAGIOS CONFIGURATION
 
 `./verify_pnp_config_v2.pl -m bulk -c /usr/local/nagios/etc/nagios.cfg -p /usr/local/pnp4nagios/etc/`
 
-# EDIT /usr/loca/nagios/etc/nagios.cfg file add add below lines at end of nagios.cfg file
-`
+## EDIT /usr/loca/nagios/etc/nagios.cfg file add add below lines at end of nagios.cfg file
+```
 # service performance data
 #
 service_perfdata_file=/usr/local/pnp4nagios/var/service-perfdata
@@ -47,15 +51,17 @@ host_perfdata_file_template=DATATYPE::HOSTPERFDATA\tTIMET::$TIMET$\tHOSTNAME::$H
 host_perfdata_file_mode=a
 host_perfdata_file_processing_interval=15
 host_perfdata_file_processing_command=process-host-perfdata-file`
+```
+## CHANGE below value from 0 to 1
+```
+process_performance_data=1
+enable_environment_macros=1
+```
 
-# CHANGE below value from 0 to 1
-`process_performance_data=1
-enable_environment_macros=1`
-
-
-# ERROR MESSAGES and SOLUTIONS
+## ERROR MESSAGES and SOLUTIONS
 **CRIT]  Command process-service-perfdata-file is not defined**
-`vim /usr/local/nagios/etc/objects/commands.cfg
+```
+vim /usr/local/nagios/etc/objects/commands.cfg
 
 define command{
        command_name    process-service-perfdata-file
@@ -65,33 +71,36 @@ define command{
 define command{
        command_name    process-host-perfdata-file
        command_line    /usr/local/pnp4nagios/libexec/process_perfdata.pl --bulk=/usr/local/pnp4nagios/var/host-perfdata
-}`
+}
+```
 
 
-# ERROR 2
+## ERROR 2
 **[CRIT]  service_perfdata_command is defined (service_perfdata_command=process-service-perfdata)
 [CRIT]  service_perfdata_command is not allowed in mode 'bulk'
 [CRIT]  host_perfdata_command is defined (host_perfdata_command=process-host-perfdata)
 [CRIT]  host_perfdata_command is not allowed in mode 'bulk'**
 
-## Solution
-`
+### Solution
+```
 #host_perfdata_command=process-host-perfdata
 #service_perfdata_command=process-service-perfdata
-Edit nagios.cfg file and comment above lines`
+```
+Edit nagios.cfg file and comment above lines
 
-# ERROR 3
+## ERROR 3
 Call to undefined function simplexml_load_file()
 
-## Solution
+### Solution
 `yum install php-xml`
 
 
-# ERROR 4
+## ERROR 4
 sizeof(): Parameter must be an array or an object that implements Countable
 
 ### Solution
-`/usr/local/pnp4nagios/share/application/models/data.php
+```
+/usr/local/pnp4nagios/share/application/models/data.php
 Default line number: 979
 
 Change from
@@ -102,4 +111,5 @@ To
    if(is_array($pages)&&sizeof($pages) > 0){
 
 systemctl restart httpd
-systemctl restart nagios`
+systemctl restart nagios
+```
