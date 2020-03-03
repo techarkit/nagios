@@ -113,3 +113,28 @@ To
 systemctl restart httpd
 systemctl restart nagios
 ```
+
+## ERROR 5
+Deprecated Methods v/ith the same name	as the r class «ni not De constructors in a future version of PHP	Servlces_JSON has a deprecated constructor 'usr local pnp4nagios share applications ison.php on line 115
+Deprecated Methods with the same name	as the« class *nH not be constructors in a future version of PHP	Services_JSON_Error has a deprecated constructor in 'usr>local'pnp4nagios>'share application/lib json.php on line 781
+Deprecated Methods with the same name	as the« class w* not be constructors in a future version of PHP	Services_JSON_Errot has a deprecated constructor in 'usr'local'pnp4nagios’Share application/lib json.php on line 795
+
+### Solution
+edit `vim /usr/local/pnp4nagios/share/application/lib/json.php` file
+
+```
+From
+class Services_JSON
+To
+class _Services_JSON
+
+From
+class Services_JSON_Error extends PEAR_Error
+To
+class _Services_JSON_Error extends PEAR_Error
+
+From
+class _Services_JSON_Error
+To
+class _Services_JSON_Error
+```
