@@ -22,7 +22,7 @@ make fullinstall
 systemctl enable npcd
 systemctl start npcd
 systemctl restart nagios
-systemctl restart httpd`
+systemctl restart httpd
 ```
 
 ## DELETE DEFAULT PHP PAGE
@@ -33,7 +33,7 @@ rm -rf /usr/local/pnp4nagios/share/install.php`
 
 `./verify_pnp_config_v2.pl -m bulk -c /usr/local/nagios/etc/nagios.cfg -p /usr/local/pnp4nagios/etc/`
 
-## EDIT /usr/loca/nagios/etc/nagios.cfg file add add below lines at end of nagios.cfg file
+## EDIT `vim /usr/loca/nagios/etc/nagios.cfg` file add add below lines at the end
 ```
 # service performance data
 #
