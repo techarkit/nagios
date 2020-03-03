@@ -3,16 +3,16 @@
 
 # CHANGE PATH to temp folder for downloading pnp4nagios
 
-```cd /tmp/`
-`wget https://sourceforge.net/projects/pnp4nagios/files/PNP-0.6/pnp4nagios-0.6.25.tar.gz`
-`tar -xvf pnp4nagios-0.6.25.tar.gz`
-`cd pnp4nagios-0.6.25`
-`./configure --with-rrdtool=/usr/bin/rrdtool --with-nagios-user=nagios --with-nagios-group=nagcmd`
-`make all`
-`make install-webconf`
-`make install-config`
-`make install-init`
-`make fullinstall```
+```cd /tmp/
+wget https://sourceforge.net/projects/pnp4nagios/files/PNP-0.6/pnp4nagios-0.6.25.tar.gz
+tar -xvf pnp4nagios-0.6.25.tar.gz
+cd pnp4nagios-0.6.25
+./configure --with-rrdtool=/usr/bin/rrdtool --with-nagios-user=nagios --with-nagios-group=nagcmd
+make all
+make install-webconf
+make install-config
+make install-init
+make fullinstall```
 
 # Start and Enable Web & Nagios services
 `systemctl enable npcd
