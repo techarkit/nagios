@@ -24,7 +24,7 @@ tar -xvf nagios-4.4.3.tar.gz
 ## Create Nagios user and group
 groupadd nagcmd
 groupadd nagios
-useradd -g nagios -G nagcmd
+useradd -g nagios -G nagcmd nagios
 usermod -aG nagcmd apache
 
 ## Change directory path into extracted package
