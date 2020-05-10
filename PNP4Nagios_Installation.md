@@ -31,6 +31,7 @@ rm -rf /usr/local/pnp4nagios/share/install.php`
 ```
 ## VERIFY PNP4NAGIOS CONFIGURATION
 
+`cd pnp4nagios-0.6.25/scripts`
 `./verify_pnp_config_v2.pl -m bulk -c /usr/local/nagios/etc/nagios.cfg -p /usr/local/pnp4nagios/etc/`
 
 ## EDIT `vim /usr/loca/nagios/etc/nagios.cfg` file add add below lines at the end
