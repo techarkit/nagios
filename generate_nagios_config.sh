@@ -3,6 +3,8 @@
 ## Author: Ankam Ravi Kumar
 ## Web Site: https://arkit.co.in
 ## Purpose: To Generate Nagios Configuration files within minute of time.
+## Usage Explanation: https://arkit.co.in/generate-nagios-configuration-using-shell-script/
+
 mkdir temp-cfg
 cat  nagios-windows.csv | while read LINE
 do
