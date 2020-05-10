@@ -1,4 +1,4 @@
-Installing and condiguring PNP4Nagios in Centos 8 step by step guide.
+Installing and configuring PNP4Nagios in Centos 8 step by step guide.
 
 ```
 yum install rrdtool
