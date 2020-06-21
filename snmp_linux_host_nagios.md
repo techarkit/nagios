@@ -7,7 +7,8 @@ Adding Linux server into Nagios monitoring using SNMP step by step procedure
 - make install
 
 
-```./check_snmp_load.pl -H localhost -C techarkit -T netsc -w 90 -c 95
+```
+./check_snmp_load.pl -H localhost -C techarkit -T netsc -w 90 -c 95
 Output: CPU used 2.0% (<90) : OK
 
 ./check_snmp_storage.pl -H localhost -C techarkit -m /boot -r -w 90 -c 95
@@ -25,4 +26,5 @@ Output: 5 processes matching http (> 3) (<= 7):OK, Mem : 13.5MB OK, CPU : 0% OK
 Output: ens33:UP:1 UP: OK
 
 ./check_snmp_int.pl -H localhost -C techarkit -n ens33 -k -w 200,400 -c 500,600
-Output:ens33:UP (0.1KBps/0.0KBps):1 UP: OK```
+Output:ens33:UP (0.1KBps/0.0KBps):1 UP: OK
+```
