@@ -1,10 +1,10 @@
 ### NagVis Installation Steps ###
 
-```yum install php php-pdo php-pdo_mysql php-fpm php-json rsync gcc g++ php-mbstring php-mysqlnd php-gd php-xml
-wget http://www.nagvis.org/share/nagvis-1.9.18.tar.gz
-tar -xvf nagvis-1.9.18.tar.gz
-cd nagvis-1.9.18
-./install.sh```
+`yum install php php-pdo php-pdo_mysql php-fpm php-json rsync gcc g++ php-mbstring php-mysqlnd php-gd php-xml`
+`wget http://www.nagvis.org/share/nagvis-1.9.18.tar.gz`
+`tar -xvf nagvis-1.9.18.tar.gz`
+`cd nagvis-1.9.18`
+`./install.sh`
 
 Welcome	to NagVis Installer 1.9.18
 This script is built to facilitate the NagVis installation and update
