@@ -7,6 +7,7 @@ cd nagvis-1.9.18
 ./install.sh
 ```
 
+```
 Welcome	to NagVis Installer 1.9.18
 This script is built to facilitate the NagVis installation and update
 procedure for you. The installer has been tested on the following systems:
@@ -50,23 +51,28 @@ Please enter the path to NagVis base [/usr/local/nagvis]:
 
 	 Trying to detect Apache settings
  Please enter the web path to NagVis [/nagvis]:
- 
+```
+
+```
 Please enter the name of the web-server user [apache]: 
 Please enter the name of the web-server group [apache] 
 create Apache config file [y]:
-
 NagVis home will be : /usr/local/nagvis
 Owner of NagVis files will be: apache
 Group of NagVis files will be: apache
+```
+
+```
 Path to Apache config dir is : /etc/httpd/conf.d
 Apache config will be created: yes
 Installation mode: install
 Do you really want to continue? [y]: y
+```
+- Username: admin
+- Password: admin
 
-Username: admin
-Password: admin
-
+```
 systemctl restart httpd
 systemctl restart nagios
-
+```
 http://server-ip/nagvis
