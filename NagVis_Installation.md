@@ -1,6 +1,6 @@
 ### NagVis Installation Steps ###
 ```
-yum install php php-pdo php-pdo_mysql php-fpm php-json rsync gcc g++ php-mbstring php-mysqlnd php-gd php-xml
+yum install php php-pdo php-pdo_mysql php-fpm php-json rsync gcc g++ php-mbstring php-mysqlnd php-gd php-xml graphviz
 wget http://www.nagvis.org/share/nagvis-1.9.18.tar.gz
 tar -xvf nagvis-1.9.18.tar.gz
 cd nagvis-1.9.18
