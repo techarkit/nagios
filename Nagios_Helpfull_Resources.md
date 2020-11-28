@@ -23,3 +23,6 @@ echo "[`date +%s`] DISABLE_HOSTGROUP_SVC_NOTIFICATIONS;linux-servers" > /usr/loc
 ## Test HTML email from Nagios 4x ##
 ./nagios_send_host_mail.pl -v -t -r aravikumar48@gmail.com -f graph -u -l en
 ./nagios_send_host_mail.pl -v -t -r aravikumar48@gmail.com -f graph -u -l en
+
+## Download Packges
+yumdownloader --downloadonly --downloaddir=/tmp perl-Mail-Sendmail rrdtool-perl perl-Digest-MD5
