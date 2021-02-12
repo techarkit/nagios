@@ -25,3 +25,17 @@ http://askaralikhan.blogspot.com/2010/12/receiving-snmp-traps-in-nagios.html
 
 ## Download Packges
 `yumdownloader --downloadonly --downloaddir=/tmp perl-Mail-Sendmail rrdtool-perl perl-Digest-MD5`
+
+## Dell iDrac Checks ##
+```- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w MEM
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w PS
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w FAN
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w FAN --fan-warn=4000,6000 --fan-crit=3000,7000
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w VDISK
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w DISK
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w SENSOR
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w PU
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w BATTERY
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w CPU
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w SENSOR --temp-warn=29,61
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w GLOBAL```
