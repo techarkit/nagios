@@ -16,7 +16,7 @@ for i in D E F G H I J K L M N O P Q R S T U V W X Y Z;
 do
 /usr/local/nagios/libexec/check_nt -H $HostIP -p 12489 -v USEDDISKSPACE -s Password -l $i -w 90 -c 95
 COMMANDSTATUS=$(echo $?)
-if [ $COMMANDSTATUS -eq 0 ] || [ $COMMANDSTATUS -eq 2 ];then
+if [ $COMMANDSTATUS -eq 0 ] || [ $COMMANDSTATUS -eq 2 ] || [ $COMMANDSTATUS -eq 1 ];then
 sed -e "s/XXXX/$HostName/g; s/ZZZZ/$i/g" /scripts/Drives.cfg >> /scripts/WinServers/$HostName.cfg
 fi
 done
