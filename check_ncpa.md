@@ -1,0 +1,23 @@
+## NCPA Linux Checks ##
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'memory/virtual/used' -u G
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'processes' --warning=100 --critical=200
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'cpu/percent' -q 'aggregate=avg'
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'disk/logical/|/total' -w 90 -c 95
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'disk/logical/|boot/total' -w 90 -c 95
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'system/node'
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'system/time' -w @2:4 -c @1:2
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'system/agent_version'
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'system/system'
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'system/uptime' -w @60:120 -c @1:60
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -T 60 -M 'services' -q 'service=sshd,status=running'
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'cpu/percent' -w 90 -c 95 -q 'aggregate=max'
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'cpu/user' -w 50 -c 100 -q 'aggregate=avg'
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'disk/logical/|instcd/total' -w 90 -c 95 -u G
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'disk/physical/sdb2/read_time' -w 90 -c 95 -u G
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'interface/bond0/errout' -w 10 -c 20
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'interface/bond0/errin' -w 10 -c 20
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'memory/swap/used' -w 3.5 -c 3.9 -u G
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'memory/virtual/percent' -w 90 -c 95 -u G
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'processes' -w 90 -c 95 -u G -q 'cpu_percent=90,match=regex'
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'user/count' -w 5 -c 10
+/usr/local/nagios/libexec/check_ncpa.py -H <HOSTADDRESS> -t '<your token>' -M 'cpu/percent' -w 90 -c 95 -q 'aggregate=sum'
