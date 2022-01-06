@@ -1,5 +1,7 @@
 Adding Linux server into Nagios monitoring using SNMP step by step procedure
 
+- https://exchange.nagios.org/components/com_mtree/attachment.php?link_id=1608&cf_id=35
+
 - tar -xvf check_snmp-1.4.tar.bz2
 - cd check_snmp-1.4
 - ./configure
