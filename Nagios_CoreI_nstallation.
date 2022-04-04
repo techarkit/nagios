@@ -16,11 +16,9 @@ yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.r
 yum install wget php gcc glibc-common gd gd-devel make net-snmp perl perl-devel openssl
 
 ## Download Nagios Core Package
-wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.3.tar.gz
 wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.6.tar.gz
 
 ## Extract Downloaded package using tar
-tar -xvf nagios-4.4.3.tar.gz
 tar -xvf nagios-4.4.6.tar.gz
 
 ## Create Nagios user and group
@@ -30,7 +28,7 @@ useradd -g nagios -G nagcmd nagios
 usermod -aG nagcmd apache
 
 ## Change directory path into extracted package
-cd nagios-4.4.3
+cd nagios-4.4.6
 ./configure --with-command-group=nagcmd
 make all
 make install
@@ -56,9 +54,9 @@ systemctl start nagios
 
 ## Download Nagios Plugins and Install
 cd /tmp/
-wget https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz
-tar -xvf nagios-plugins-2.2.1.tar.gz
-cd nagios-plugins-2.2.1
+wget https://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz
+tar -xvf nagios-plugins-2.3.3.tar.gz
+cd nagios-plugins-2.3.3
 ./configure --with-nagios-user=nagios --with-nagios-group=nagcmd
 make
 make install
