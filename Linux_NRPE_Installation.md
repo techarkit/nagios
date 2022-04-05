@@ -14,7 +14,7 @@ cd nagios-plugins-2.3.3
 make 
 make install 
 chown nagios.nagios /usr/local/nagios 
-chown -R nagios.nagios /usr/local/nagios/libexec ```
+chown -R nagios.nagios /usr/local/nagios/libexec
 
 
 ## Install NRPE Client
@@ -42,7 +42,7 @@ firewall-cmd --zone=public --add-port=5666/tcp --permanent
 sed -i '/^allowed_hosts=/s/$/,192.168.29.200/' /usr/local/nagios/etc/nrpe.cfg 
 sed -i 's/^dont_blame_nrpe=.*/dont_blame_nrpe=1/g' /usr/local/nagios/etc/nrpe.cfg 
 
-systemctl start nrpe ```
+systemctl start nrpe
 
 ## Check NRPE status 
 
