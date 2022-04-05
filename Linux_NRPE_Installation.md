@@ -1,3 +1,5 @@
+## Install Plugins
+
 yum install -y gcc glibc glibc-common gd gd-devel make net-snmp openssl-devel 
 
 useradd nagios  
@@ -15,6 +17,7 @@ chown nagios.nagios /usr/local/nagios
 chown -R nagios.nagios /usr/local/nagios/libexec 
 
 
+## Install NRPE Client
 cd /tmp 
 wget --no-check-certificate -O nrpe.tar.gz https://github.com/NagiosEnterprises/nrpe/archive/nrpe-4.0.3.tar.gz 
 tar xzf nrpe-4.0.3.tar.gz 
