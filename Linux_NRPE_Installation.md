@@ -27,7 +27,7 @@ make all
 make install-groups-users 
 make install-plugin 
 make install-daemon 
-make install-daemon-config 
+make install-config 
 make install-init 
 
 echo >> /etc/services 
