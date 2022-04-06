@@ -27,7 +27,7 @@ sysctl -e -p /etc/sysctl.conf
 
 
 ## Download NDOUtils ##
-wget -O ndoutils.tar.gz https://github.com/NagiosEnterprises/ndoutils/releases/
+wget -O ndoutils.tar.gz https://github.com/NagiosEnterprises/ndoutils/releases/download/ndoutils-2.1.3/ndoutils-2.1.3.tar.gz
 
 ## Extract Package and Install ##
 tar xvf ndoutils.tar.gz
