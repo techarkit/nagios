@@ -1,4 +1,4 @@
-yum install mariadb*
+```yum install mariadb*
 systemctl start mariadb
 
 ## Setup MySQL/MariaSB Database Server ##
@@ -6,6 +6,12 @@ mysql_secure_installation
 
 ## Create Database and User ##
 mysql -u root -p
+
+CREATE DATABASE nagios DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER 'ndoutils'@'localhost' IDENTIFIED BY 'password';
+GRANT USAGE ON *.* TO 'ndoutils'@'localhost' IDENTIFIED BY 'password' WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
+GRANT ALL PRIVILEGES ON nagios.* TO 'ndoutils'@'localhost' WITH GRANT OPTION ;
+FLUSH PRIVILEGES;
 
 ## Change Kernel Parameters ##
 cp /etc/sysctl.conf /opt/
@@ -72,4 +78,4 @@ systemctl start ndo2db.service
 systemctl stop ndo2db.service
 systemctl restart ndo2db.service
 systemctl status ndo2db.service
-clear
+clear```
