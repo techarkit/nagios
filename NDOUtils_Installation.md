@@ -70,16 +70,3 @@ systemctl start ndo2db.service
 systemctl stop ndo2db.service
 systemctl restart ndo2db.service
 systemctl status ndo2db.service
-clear
-cd
-locate nagvis.ini-php
-cd /usr/local/nagvis/
-ls
-cd etc/
-ls
-vi nagvis.ini.php
-systemctl start ndo2db.service
-systemctl stop ndo2db.service
-systemctl restart ndo2db.service
-systemctl status ndo2db.service
-clear
