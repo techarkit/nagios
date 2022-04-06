@@ -57,6 +57,10 @@ systemctl enable ndo2db.service
 systemctl start ndo2db.service
 cd /usr/local/nagios/etc/
 vi nagios.cfg
+
+#NDOUtils Broker Module Add this Line
+broker_module=/usr/local/nagios/bin/ndomod.o config_file=/usr/local/nagios/etc/ndomod.cfg
+
 systemctl restart nagios.service
 systemctl status nagios.service
 clear
@@ -78,4 +82,4 @@ systemctl start ndo2db.service
 systemctl stop ndo2db.service
 systemctl restart ndo2db.service
 systemctl status ndo2db.service
-clear```
+clear
