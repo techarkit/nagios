@@ -39,3 +39,10 @@ http://askaralikhan.blogspot.com/2010/12/receiving-snmp-traps-in-nagios.html
 - /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w CPU
 - /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w SENSOR --temp-warn=29,61
 - /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w GLOBAL```
+
+## Windows SNMP Checks ##
+```./check_snmp_load.pl -H 192.168.29.205 -C nagios --v2c -w 80 -c 90 -f
+./check_snmp_storage.pl -H -H 192.168.29.205 -C nagios --v2c -w 80 -c 90 -m 'Physical Memory'
+./check_snmp_storage.pl -H -H 192.168.29.205 -C nagios --v2c -w 80 -c 90 -m 'Virtual Memory'
+./check_snmp_storage.pl -H -H 192.168.29.205 -C nagios --v2c -w 80 -c 90 -q 'FixedDisk' -m C
+./check_snmp -H 192.168.29.205 -C nagios -o sysUpTime.0```
