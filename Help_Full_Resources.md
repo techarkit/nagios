@@ -1,4 +1,6 @@
 ## host_nagios_send_email.pl
+- wget https://nagios.fm4dd.com/howto/source/notification-ngraph/nagios_send_host_mail.pl
+- wget https://nagios.fm4dd.com/howto/source/notification-ngraph/nagios_send_service_mail.pl
 - yum install perl-Mail-Sendmail rrdtool-perl perl-Digest-MD5 -y
 - perl -MRRDs -le 'print q(ok!)'
 
