@@ -29,7 +29,7 @@ http://askaralikhan.blogspot.com/2010/12/receiving-snmp-traps-in-nagios.html
 `yumdownloader --downloadonly --downloaddir=/tmp perl-Mail-Sendmail rrdtool-perl perl-Digest-MD5`
 
 ## Dell iDrac Checks ##
-```- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w MEM
+`- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w MEM
 - /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w PS
 - /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w FAN
 - /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w FAN --fan-warn=4000,6000 --fan-crit=3000,7000
@@ -40,11 +40,18 @@ http://askaralikhan.blogspot.com/2010/12/receiving-snmp-traps-in-nagios.html
 - /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w BATTERY
 - /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w CPU
 - /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w SENSOR --temp-warn=29,61
-- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w GLOBAL```
+- /usr/local/nagios/libexec/check_idrac2 -H IDRACIP -c public -p -v2c -w GLOBAL`
 
 ## Windows SNMP Checks ##
-```./check_snmp_load.pl -H 192.168.29.205 -C nagios --v2c -w 80 -c 90 -f
+`./check_snmp_load.pl -H 192.168.29.205 -C nagios --v2c -w 80 -c 90 -f
 ./check_snmp_storage.pl -H -H 192.168.29.205 -C nagios --v2c -w 80 -c 90 -m 'Physical Memory'
 ./check_snmp_storage.pl -H -H 192.168.29.205 -C nagios --v2c -w 80 -c 90 -m 'Virtual Memory'
 ./check_snmp_storage.pl -H -H 192.168.29.205 -C nagios --v2c -w 80 -c 90 -q 'FixedDisk' -m C
-./check_snmp -H 192.168.29.205 -C nagios -o sysUpTime.0```
+./check_snmp -H 192.168.29.205 -C nagios -o sysUpTime.0`
+
+## MySQL Check check_mysql ##
+`yum install perl-DBI perl-DBD-MySQL perl-GD
+cpan install DBI
+yum install perl-DBD-mysql
+./check_mysqld.pl -H localhost -u root -p mysql
+./check_mysqld.pl -H localhost -u root -p mysql -a uptime,threads_connected,questions,slow_queries,open_tables -A threads_running,innodb_row_lock_time_avg -w ",,,," -c ",,,,>250"`
