@@ -48,7 +48,7 @@ cd db/
 cd /usr/local/nagios/etc/
 mv ndo2db.cfg-sample ndo2db.cfg
 mv ndomod.cfg-sample ndomod.cfg
-ed -i 's/^db_user=.*/db_user=ndoutils/g' /usr/local/nagios/etc/ndo2db.cfg
+sed -i 's/^db_user=.*/db_user=ndoutils/g' /usr/local/nagios/etc/ndo2db.cfg
 sed -i 's/^db_user=.*/db_user=ndoutils/g' /usr/local/nagios/etc/ndo2db.cfg
 sed -i 's/^db_pass=.*/db_pass=password/g' /usr/local/nagios/etc/ndo2db.cfg
 
